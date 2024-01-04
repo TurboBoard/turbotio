@@ -1,0 +1,75 @@
+@layer components {
+    /*
+		HTML Elements
+	*/
+    .button {
+        @apply px-7;
+        @apply py-6;
+
+        @apply rounded-md;
+
+        @apply bg-byzantium;
+
+        @apply text-light;
+
+        @apply leading-none;
+        @apply tracking-wider;
+
+        @apply shadow;
+
+        &:disabled {
+            @apply bg-stone;
+        }
+    }
+
+    /*
+		Components
+	*/
+    .divider {
+        @apply h-6;
+        @apply md:h-7;
+        @apply lg:h-8;
+    }
+
+    .divider--left-up {
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+
+    .divider--left-down {
+        clip-path: polygon(0 0, 0 100%, 100% 100%);
+    }
+
+    .divider--right-down {
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+
+    .divider--right-up {
+        clip-path: polygon(0 0, 0% 100%, 100% 0);
+    }
+
+    .content {
+        @apply break-words;
+        @apply whitespace-pre-wrap;
+
+        a {
+            @apply underline-link;
+        }
+
+        p {
+            @apply mb-7;
+            @apply last:mb-0;
+        }
+    }
+
+    .message {
+        &-list {
+            &__alt-text {
+                @apply text-silver;
+
+                .featured & {
+                    @apply text-light;
+                }
+            }
+        }
+    }
+}

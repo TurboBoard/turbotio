@@ -1,0 +1,74 @@
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-racing;
+
+        @apply text-pink;
+    }
+
+    h1 {
+        @apply mb-8;
+
+        @apply text-center;
+
+        @apply text-5xl;
+        @apply md:text-6xl;
+    }
+
+    h2 {
+        @apply text-4xl;
+        @apply md:text-5xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+        @apply md:text-4xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+        @apply md:text-3xl;
+    }
+
+    h5 {
+        @apply text-xl;
+        @apply md:text-2xl;
+    }
+
+    h6 {
+        @apply text-lg;
+        @apply md:text-xl;
+    }
+
+    a {
+        @apply opacity-link;
+    }
+
+    button {
+        &:not(:disabled) {
+            @apply opacity-link;
+        }
+
+        &:disabled {
+            @apply cursor-not-allowed;
+        }
+    }
+
+    a,
+    button,
+    input,
+    textarea {
+        @apply in-out-smooth;
+    }
+
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+}
