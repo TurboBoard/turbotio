@@ -1,3 +1,5 @@
+import { Entry as EntryType } from 'contentful';
+
 export type Author = {
     avatar: string;
     id: string;
@@ -9,6 +11,8 @@ export type AuthorItem = {
     id: string;
     name: string;
 };
+
+export type Entry = EntryType<any>;
 
 export type Guild = {
     icon: string;

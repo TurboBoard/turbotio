@@ -25,6 +25,11 @@
     /*
 		Components
 	*/
+    .bounty {
+        .message__share {
+            @apply hidden;
+        }
+    }
     .divider {
         @apply h-6;
         @apply md:h-7;
@@ -56,7 +61,6 @@
         }
 
         p {
-            @apply mb-7;
             @apply last:mb-0;
         }
     }
@@ -70,6 +74,20 @@
                     @apply text-light;
                 }
             }
+        }
+    }
+
+    .rte {
+        a {
+            @apply underline-link;
+        }
+
+        ul {
+            @apply mb-7;
+
+            @apply list-inside;
+
+            @apply list-disc;
         }
     }
 }

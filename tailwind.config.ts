@@ -1,7 +1,14 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-    content: ['./app/**/*.{ts,tsx}', './components/**/*.tsx', './forms/**/*.tsx', './inputs/**/*.tsx', './svgs/*.tsx'],
+    content: [
+        './app/**/*.{ts,tsx}',
+        './components/**/*.tsx',
+        './forms/**/*.tsx',
+        './inputs/**/*.tsx',
+        './lib/**/*.tsx',
+        './svgs/*.tsx',
+    ],
     theme: {
         extend: {
             backgroundImage: {

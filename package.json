@@ -1,6 +1,6 @@
 {
     "name": "turbotio",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -12,6 +12,8 @@
         "@aws-sdk/client-dynamodb": "^3.470.0",
         "@aws-sdk/client-ses": "^3.484.0",
         "@aws-sdk/lib-dynamodb": "^3.470.0",
+        "@contentful/rich-text-react-renderer": "^15.19.0",
+        "contentful": "^10.6.16",
         "markdown-to-jsx": "^7.4.0",
         "next": "14.0.4",
         "react": "^18",

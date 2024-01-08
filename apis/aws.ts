@@ -12,19 +12,17 @@ import {
 } from '@aws-sdk/lib-dynamodb';
 
 const client = {
-    // @ts-ignore
     dynamo: new DynamoDBClient({
         credentials: {
-            accessKeyId: process.env.AMAZON_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AMAZON_SECRET_ACCESS_KEY,
+            accessKeyId: process.env.AMAZON_ACCESS_KEY_ID as string,
+            secretAccessKey: process.env.AMAZON_SECRET_ACCESS_KEY as string,
         },
         region: 'us-east-1',
     }),
-    // @ts-ignore
     ses: new SESClient({
         credentials: {
-            accessKeyId: process.env.AMAZON_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AMAZON_SECRET_ACCESS_KEY,
+            accessKeyId: process.env.AMAZON_ACCESS_KEY_ID as string,
+            secretAccessKey: process.env.AMAZON_SECRET_ACCESS_KEY as string,
         },
         region: 'us-east-1',
     }),

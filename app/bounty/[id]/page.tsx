@@ -11,8 +11,10 @@ export default async function Page({ params: { id } }: { params: { id: string } 
 
     return (
         <main className="py-8">
-            <div className="xl:w-3/4 xl:mx-auto">
-                <Message {...message} />
+            <div className="gutter">
+                <div className="bounty xl:w-3/4 xl:mx-auto">
+                    <Message {...message} />
+                </div>
             </div>
         </main>
     );

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import Content from './Content';
 
+import External from '@Svgs/External';
 import Tiger from '@Svgs/Tiger';
 
 import { Message } from '@Types';
@@ -25,19 +26,7 @@ export default function Component({ author, content, count, date, guild, id }: M
             </div>
 
             <div className="md:w-1/6">
-                <ul className="space-y-7 text-sm">
-                    <li>
-                        <div className="mb-4">
-                            <strong>ID</strong>
-                        </div>
-
-                        <Link
-                            className="message-list__alt-text underline-link text-sm break-all"
-                            href={`/bounty/${id}`}
-                        >
-                            {id}
-                        </Link>
-                    </li>
+                <ul className="h-full flex flex-col space-y-7 text-sm">
                     <li>
                         <div className="mb-4">
                             <strong>User</strong>
@@ -60,26 +49,43 @@ export default function Component({ author, content, count, date, guild, id }: M
                             <strong>Server</strong>
                         </div>
 
-                        <div className="flex items-center space-x-5">
-                            <Image
-                                alt="Guild icon"
-                                className="h-8 w-8 rounded-full"
-                                height={128}
-                                src={guild.icon}
-                                width={128}
-                            />
+                        <div className="flex space-x-5">
+                            <div className="flex items-center space-x-5">
+                                <Image
+                                    alt="Guild icon"
+                                    className="h-8 w-8 rounded-full"
+                                    height={128}
+                                    src={guild.icon}
+                                    width={128}
+                                />
 
-                            <span className="message-list__alt-text">{guild.name}</span>
+                                <span className="message-list__alt-text">{guild.name}</span>
+                            </div>
+
+                            <div>
+                                <a className="message-list__alt-text block h-6" href={guild.invite} target="_blank">
+                                    <External />
+                                </a>
+                            </div>
                         </div>
                     </li>
-                    <li className="flex-1">
+                    <li>
                         <div className="mb-4">
                             <strong>Created</strong>
                         </div>
 
                         <div className="message-list__alt-text">{date}</div>
                     </li>
-                    <li></li>
+                    <li className="message__share flex-1 flex flex-col justify-end">
+                        <div>
+                            <Link
+                                className="message-list__alt-text underline-link text-sm break-all"
+                                href={`/bounty/${id}`}
+                            >
+                                Share Bounty
+                            </Link>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

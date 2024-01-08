@@ -1,3 +1,4 @@
 import blur from './blur';
+import rte from './rte';
 
-export { blur };
+export { blur, rte };

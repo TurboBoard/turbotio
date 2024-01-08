@@ -1,3 +1,4 @@
+import contentful from '@Apis/contentful';
 import { dynamo } from '@Apis/aws';
 
 import get_message from '@Helpers/get_message';
@@ -5,7 +6,23 @@ import get_message from '@Helpers/get_message';
 import Contact from '@Components/Contact';
 import Message from '@Components/message/Message';
 
-import { Messages, MessageItem } from '@Types';
+import { Messages, Message as MessageType, MessageItem } from '@Types';
+
+const get_featured = async (): Promise<MessageType> => {
+    const item = await contentful.getEntry('1At94411COxnmsOMi8OtwB');
+
+    if (!item) {
+        throw new Error('Could not retrieve homepage from contentful');
+    }
+
+    const message = await get_message(item.fields.featuredBounty as string);
+
+    if (!message) {
+        throw new Error('Could not retrieve featured bounty');
+    }
+
+    return message;
+};
 
 const get_messages = async (items: MessageItem[]): Promise<Messages> => {
     const messages: Messages = [];
@@ -36,11 +53,7 @@ export default async function Page() {
 
     const messages = await get_messages(items as MessageItem[]);
 
-    const featured = messages.find(e => e.id === 'zkEjFUJKxeVInj64iUH0R');
-
-    if (!featured) {
-        throw new Error('Could not find featured message');
-    }
+    const featured = await get_featured();
 
     return (
         <main className="space-y-9 py-8">
