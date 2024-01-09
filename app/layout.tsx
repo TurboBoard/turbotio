@@ -9,6 +9,9 @@ import '@Styles';
 import Footer from '@Components/Footer';
 import Header from '@Components/Header';
 
+const title = 'Turbo Board';
+const description = 'Discord powered video game bounties';
+
 const racing = Racing_Sans_One({
     weight: '400',
     subsets: ['latin'],
@@ -19,9 +22,7 @@ const racing = Racing_Sans_One({
 const mona = localFont({ src: '../public/fonts/mona.woff2', variable: '--font-mona' });
 
 export const metadata: Metadata = {
-    title: 'TurboBoard',
-    description: 'Video game community challenges',
-    manifest: '/site.webmanifest',
+    description,
     icons: [
         {
             rel: 'icon',
@@ -41,6 +42,19 @@ export const metadata: Metadata = {
             url: '/apple-touch-icon.png',
         },
     ],
+    manifest: '/site.webmanifest',
+    openGraph: {
+        description,
+        images: [
+            {
+                url: 'https://turboboard.io/img/meta.jpg',
+                width: 1200,
+                height: 630,
+            },
+        ],
+        title,
+    },
+    title: 'TurboBoard',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
