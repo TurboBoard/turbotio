@@ -1,3 +1,5 @@
+import PlausibleProvider from 'next-plausible';
+
 import localFont from 'next/font/local';
 
 import type { Metadata } from 'next';
@@ -22,6 +24,7 @@ const racing = Racing_Sans_One({
 const mona = localFont({ src: '../public/fonts/mona.woff2', variable: '--font-mona' });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://turboboard.io'),
     description,
     icons: [
         {
@@ -66,6 +69,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className={`${racing.variable} ${mona.variable}`}>
+            <head>
+                <PlausibleProvider domain="turboboard.io" />
+            </head>
             <body className="bg-dark font-mona text-light">
                 <Header />
 
