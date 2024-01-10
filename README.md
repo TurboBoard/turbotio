@@ -4,3 +4,6 @@
 
 - MVP Launch
 
+**Version 1.0.1**
+- Updated meta tags
+- Added SSR to bounties

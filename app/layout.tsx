@@ -9,8 +9,8 @@ import '@Styles';
 import Footer from '@Components/Footer';
 import Header from '@Components/Header';
 
-const title = 'Turbo Board';
-const description = 'Discord powered video game bounties';
+const title = 'Turbo Board - Video Game Bounties';
+const description = 'Turbo Board acts as an aggregate for Discord community video game challenges.';
 
 const racing = Racing_Sans_One({
     weight: '400',
@@ -55,6 +55,12 @@ export const metadata: Metadata = {
         title,
     },
     title: 'TurboBoard',
+    twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: ['https://turboboard.io/img/meta.jpg'], // Must be an absolute URL
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
