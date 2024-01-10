@@ -4,7 +4,7 @@ import get_message from '@Helpers/get_message';
 
 import Message from '@Components/message/Message';
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
     const { Items } = await dynamo.scan({
         TableName: 'turbot_messages',
     });
@@ -13,16 +13,11 @@ export async function getStaticPaths() {
         throw new Error('Could not retrieve messages from turbot_messages');
     }
 
-    const paths = Items.map(e => ({
+    return Items.map(e => ({
         params: {
             id: e.turbot_id,
         },
     }));
-
-    return {
-        paths,
-        fallback: true,
-    };
 }
 
 export default async function Page({ params: { id } }: { params: { id: string } }) {
